@@ -6,22 +6,17 @@ body{
 }
 
 .container{
-  width: 90%;
+  width: 85%;
   margin: auto;
   overflow: hidden;
   text-align: center;
 }
 
-
 ul{
-  margin: 0;
+  margin-top: 10px;
   padding: 0;
   float: right;
 }
-
-
-
-
 
 /* Banner styles */
 
@@ -31,25 +26,26 @@ ul{
   text-align: center;
   color: white;
 }
+
 #banner .logo{
   margin: 70px 0 0 50px;
   align-self: auto;
   float: left; 
 }
-#banner h1{
 
+#banner h1{
   font-size: 30px;
   margin-top: 100px;
   font-style: italic;
   float:right;
+  height: 38px;
+  background: rgba(162, 57, 202, 0.6);
+  border: #03CCFE 5px solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  color: #f4f4f4;
   border-radius: 25px;
-  background-color: rgba(162, 57, 202, 0.6);
-}
-
-
-iframe {
-  border-color: #a239ca;
-  border-width: 3px;
 }
 
 /* style for header */
@@ -57,13 +53,14 @@ iframe {
 header nav{
   background: #03CCFE;
   padding-top: 10px;
-  min-height: 60px;
+  min-height: 50px;
   border-bottom: #a239ca 5px solid;
   margin-bottom: 50px;
   -webkit-transition: all ease .5s;
   -o-transition: all ease .5s;
   transition: all ease .5s;
 }
+
 header a{
   color:#a239ca;
   text-decoration: none;
@@ -71,12 +68,10 @@ header a{
   font-size: 18px;
 }
 
-
 header li{
   display: inline;
   padding: 0 20px 0 20px;
 }
-
 
 header .current a{
   color: #f4f4f4;
@@ -88,15 +83,22 @@ header a:hover{
   color: black;
   font-weight: bold;
 }
-/* class style with jquery */
+
+/* class style with jquery  for the menu bar*/
+
 .menu-fixed {
   background-color: rgba(3, 204, 254, 0.7);
   position: fixed;
-  z-index: 1500;
+  z-index: 1;
   top:0;
   width: 100%;
   max-width: 1500px;
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+.container a {
+  color: black;
+  text-decoration: none;
 }
 
 /* Boxes styles */
@@ -106,6 +108,8 @@ header a:hover{
 }
 
 #boxes .box{
+  position: relative;
+  width: 50%;
   float: left;
   text-align: center;
   width: 30%;
@@ -113,47 +117,189 @@ header a:hover{
 }
 
 #boxes .box img{
-  width: 150px;
+  width: 175px;
+  cursor: pointer;
+}
+
+.imagen {
+  margin: auto;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+.box:hover .image {
+  opacity: 0.3;
+}
+
+.box:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  font-size: 15px;
+  margin-top: auto;
+  font-style: italic;
+  float:right;
+  height: 38px;
+  background: rgba(0, 0, 0, 0.7);
+  border: #03CCFE 5px solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  color: #f4f4f4;
+  border-radius: 25px;
+}
+/* styles for Gallery */
+
+.galeria li{
+  list-style-type: none;
+}
+
+.galeria{
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.galeria--img {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 30px;
+  object-fit: cover;
+  filter: brightness(70%);
+  cursor: pointer;
+}
+.galeria--img:hover {
+filter: brightness(100%);
+animation: escalar 1.5s;
+}
+@keyframes escalar{
+  to {
+    transform: scale(1);
+  }
+  from {
+    transform: scale(1.05);
+  }   
+}
+
+/* class style with jquery  for the modal*/
+
+.modal {
+  position: fixed;
+  z-index: 1500;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal--img {
+  width: 80%;
+  max-width: 800px;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.modal--boton {
+  width: 50px;
+  height: 50px;
+  color: #03CCFE;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+  border: #03CCFE 4px solid;
+  border-radius: 50%;
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  cursor: pointer;
 }
 
 /* Styles for contacs */
 
+.persons a {
+  color: black;
+  text-decoration: none;
+}
+
 #main img{
   width: 150px;
   border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 article#main-col{
   float: left;
   width: 50%;
 }
 
-/* form style */
-
+/* Styles for the form */
 
 aside#sideform{
   float:right;
   width: 35%;
   margin-top: 10px;
 }
+
 aside#sideform .quote input, aside#sideform .quote textarea{
   width: 90%;
   padding: 5px;
 }
+
 .button_1{
   height: 38px;
-  background: #a239ca;
-  border: 0px;
+  background: #03CCFE;
+  border: #a239ca 5px solid;
   padding-left: 20px;
   padding-right: 20px;
+  font-size: 20px;
   color: black;
   border-radius: 25px;
+  cursor: pointer;
 }
+
 .blueform{
   padding: 15px;
-  background: rgba(3, 204, 254, 0.7);
+  background: #03CCFE;
+  border: #a239ca 5px solid;
   margin-top: 10px;
   margin-bottom: 60px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+/* Styles for the map */
+
+iframe {
+  border-color: #a239ca;
+  border-width: 5px;
+  width: 90%;
+}
+
 /* footer style */
 footer{
   width: 100%;
@@ -163,9 +309,11 @@ footer{
   background: #03CCFE;
   border-top: #a239ca 5px solid;
 }
+
 footer p{
   margin-bottom: 20px;
 }
+
 footer .sociales{
   padding: 0 0 0 25px;
 }
@@ -175,15 +323,19 @@ footer .sociales a{
   font-size: 35px;
   color: black;
 }
+
 footer .sociales .facebook:hover{
   color:#a239ca;
 }
+
 footer .sociales .linkedin:hover{
   color:#a239ca;
 }
+
 footer .sociales .twitter:hover{
   color:#a239ca;
 }
+
 footer .sociales .instagram:hover{
   color:#a239ca;
 }
@@ -197,21 +349,25 @@ footer .sociales .instagram:hover{
     background-size: cover;
     text-align: center;
     color: white;
-  
   }
+  
   #banner .logo{
     margin: 20px 0 0 50px;
   }
   #banner .logo img{
     width: 200px;
-
   }
+   
   #banner h1{
+    justify-content: center;
+    height: 25px;
+    padding: 0px;
     margin: 0px;
     font-size: 18px;
     text-align: center;
-    width: 100%;
-  }
+    width: 85%;
+  } 
+  
   header nav a{
     float: none;
     font-size: 13px;
@@ -223,19 +379,24 @@ footer .sociales .instagram:hover{
   }
   article#main-col,
   aside#sideform,
-  #boxes .box{
+  #boxes .box {
     float: none;
     text-align: center;
     width: 100%;
   }
-  iframe {
-    width: 90%;
+  .modal--boton {
+    width: 20px;
+    height: 20px;
+    color: #03CCFE;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    border: #03CCFE 2px solid;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    cursor: pointer;
   }
-
-  /* article#main-col,
-  aside#sideform{
-    float: none;
-
-  } */
-
 }
