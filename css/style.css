@@ -187,6 +187,7 @@ header a:hover{
   margin-bottom: 30px;
   object-fit: cover;
   filter: brightness(70%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 .galeria--img:hover {
