@@ -87,7 +87,7 @@ header a:hover{
 /* class style with jquery  for the menu bar*/
 
 .menu-fixed {
-  background-color: rgba(3, 204, 254, 0.7);
+  background-color: #03CCFE;
   position: fixed;
   z-index: 1;
   top:0;
